@@ -1,6 +1,6 @@
 import { Keypair, Connection, Commitment } from "@solana/web3.js";
 import { createMint } from '@solana/spl-token';
-import wallet from "/wba-wallet.json"
+import wallet from "./wba-wallet.json"
 
 // Import our keypair from the wallet file
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
@@ -13,11 +13,12 @@ const connection = new Connection("https://api.devnet.solana.com", commitment);
     try {
         const mint = await createMint(
             connection,
-            payer,
-            mintAuthority.publicKey,
-            freezeAuthority.publicKey,
-            9 // We are using 9 to match the CLI decimal default exactly
+            keypair,
+            keypair.publicKey,
+            null,
+            9   // We are using 9 to match the CLI decimal default exactly
           );
+          console.log(mint.toBase58());
     } catch(error) {
         console.log(`Oops, something went wrong: ${error}`)
     }
