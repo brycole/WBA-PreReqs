@@ -30,7 +30,7 @@ const mint = new PublicKey("62EqfNWAvUtFGrnGFuYY1Ri5xzixDbpEgf98anrgGBdC");
             mint,
             tokenAccount.address,
             keypair,
-            1000n * token_decimals // because decimals for the mint are set to 9 
+            100000n * token_decimals // because decimals for the mint are set to 9 
         )
         console.log(`${mintTx}`)
     } catch(error) {

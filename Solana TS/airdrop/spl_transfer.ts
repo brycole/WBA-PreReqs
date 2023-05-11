@@ -44,7 +44,7 @@ const to = new PublicKey("tiosTcRdt9TW7baDB3BLL3LY16w5pP5XsTbeQNZJKjD");
             100_000_000  // or 1e8
           )
 
-          console.log('${tx}')
+          console.log(`${tx}`)
 
     } catch(e) {
         console.error(`Oops, something went wrong: ${e}`)
