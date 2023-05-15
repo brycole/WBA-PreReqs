@@ -18,7 +18,7 @@ const connection = new Connection("https://api.devnet.solana.com");
 const provider = new AnchorProvider(connection, new Wallet(keypair), { commitment: "confirmed"});
 
 // Create our program
-const program = new Program<WbaVault>(IDL, "G7QyuwYPAcwrJ7p1S86gGbtVPt9A93vUyrMpc5xKEmoA" as Address, provider);
+const program = new Program<WbaVault>(IDL, "D51uEDHLbWAxNfodfQDv7qkp8WZtxrhi3uganGbNos7o" as Address, provider);
 
 // Create vault auth PDA
 const vault_auth_seed = [Buffer.from("auth"), vaultstate.publicKey.toBuffer()];

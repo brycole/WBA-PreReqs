@@ -9,7 +9,7 @@ import { ASSOCIATED_PROGRAM_ID } from "@project-serum/anchor/dist/cjs/utils/toke
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
 
 // get vaultstate public key
-const vaultstate = new PublicKey("6MvYkDwoUJjGSLkpPhvkuDTwQAHzptZ4TZby7bhiEtB6")
+const vaultstate = new PublicKey("HVXjF8r7cpznWxt9DzcELq1QR7hs79gBrmPTpB2YyxBm")
 
 
 // Create a devnet connection
@@ -22,7 +22,7 @@ const mint = new PublicKey("62EqfNWAvUtFGrnGFuYY1Ri5xzixDbpEgf98anrgGBdC");
 const provider = new AnchorProvider(connection, new Wallet(keypair), { commitment: "confirmed"});
 
 // Create our program
-const program = new Program<WbaVault>(IDL, "G7QyuwYPAcwrJ7p1S86gGbtVPt9A93vUyrMpc5xKEmoA" as Address, provider);
+const program = new Program<WbaVault>(IDL, "D51uEDHLbWAxNfodfQDv7qkp8WZtxrhi3uganGbNos7o" as Address, provider);
 
 // Create vault auth PDA
 const vault_auth_seed = [Buffer.from("auth"), vaultstate.toBuffer()];
